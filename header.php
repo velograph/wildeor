@@ -21,7 +21,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'Wildeor' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="header" role="banner">
 		<div class="utility-header">
 			<a href="/my-account">My Account</a>
 			<a href="/cart">Cart</a>
