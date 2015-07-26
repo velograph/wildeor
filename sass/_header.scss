@@ -1,12 +1,3 @@
 .header {
-	.social-media-bar {
-		ul {
-			li {
-				display: inline-block;
-				svg {
-					width: $twenty;
-				}
-			}
-		}
-	}
+	@include outer-container;
 }

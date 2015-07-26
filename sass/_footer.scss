@@ -1,0 +1,12 @@
+.footer {
+	@include outer-container;
+	.footer-row {
+		@include row();
+		.footer-section {
+			@include span-columns(4);
+		}
+		.site-info {
+
+		}
+	}
+}

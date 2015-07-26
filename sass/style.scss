@@ -22,3 +22,28 @@
 @import "variables";
 @import "header";
 @import "footer";
+
+
+ul.social-media {
+	li {
+		display: inline-block;
+		svg {
+			width: $twenty;
+		}
+	}
+}
+
+.home-page-slider {
+	@include outer-container;
+}
+
+.shop-portal-row {
+	@include outer-container;
+	.shop-portal {
+		@include span-columns(4);
+	}
+}
+
+.page-lead-in {
+	@include outer-container;
+}
