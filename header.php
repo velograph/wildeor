@@ -35,7 +35,9 @@
 		</div>
 
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img src="<?php the_field('header_logo', 27); ?>" />
+			</a>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
