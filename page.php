@@ -16,14 +16,30 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'page' ); ?>
+			<?php echo get_template_part('partials/entry', 'content'); ?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+			<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile' ); ?>
+			<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet' ); ?>
+			<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop' ); ?>
+			<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina' ); ?>
+
+			<picture>
+				<!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source
+					srcset="<?php echo $mobile[0]; ?>"
+					media="(max-width: 500px)" />
+				<source
+					srcset="<?php echo $tablet[0]; ?>"
+					media="(max-width: 860px)" />
+				<source
+					srcset="<?php echo $desktop[0]; ?>"
+					media="(max-width: 1180px)" />
+				<source
+					srcset="<?php echo $retina[0]; ?>"
+					media="(min-width: 1181px)" />
+				<!--[if IE 9]></video><![endif]-->
+				<img srcset="<?php echo $desktop[0]; ?>">
+			</picture>
 
 		<?php endwhile; // end of the loop. ?>
 
