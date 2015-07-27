@@ -19,34 +19,42 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<div class="blog-portal">
+				<article class="blog-article">
 
-					<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile' ); ?>
-					<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet' ); ?>
-					<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop' ); ?>
-					<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina' ); ?>
+					<div class="article-leading">
 
-					<picture>
-						<!--[if IE 9]><video style="display: none;"><![endif]-->
-						<source
-							srcset="<?php echo $mobile[0]; ?>"
-							media="(max-width: 500px)" />
-						<source
-							srcset="<?php echo $tablet[0]; ?>"
-							media="(max-width: 860px)" />
-						<source
-							srcset="<?php echo $desktop[0]; ?>"
-							media="(max-width: 1180px)" />
-						<source
-							srcset="<?php echo $retina[0]; ?>"
-							media="(min-width: 1181px)" />
-						<!--[if IE 9]></video><![endif]-->
-						<img srcset="<?php echo $desktop[0]; ?>">
-					</picture>
+						<a href="<?php the_permalink(); ?>">
 
-					<h1><?php the_title(); ?></h1>
+							<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile' ); ?>
+							<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet' ); ?>
+							<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop' ); ?>
+							<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina' ); ?>
 
-				</div>
+							<picture>
+								<!--[if IE 9]><video style="display: none;"><![endif]-->
+								<source
+									srcset="<?php echo $mobile[0]; ?>"
+									media="(max-width: 500px)" />
+								<source
+									srcset="<?php echo $tablet[0]; ?>"
+									media="(max-width: 860px)" />
+								<source
+									srcset="<?php echo $desktop[0]; ?>"
+									media="(max-width: 1180px)" />
+								<source
+									srcset="<?php echo $retina[0]; ?>"
+									media="(min-width: 1181px)" />
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $desktop[0]; ?>">
+							</picture>
+
+							<h1><?php the_title(); ?></h1>
+
+						</a>
+
+					</div>
+
+				</article>
 
 			<?php endwhile; ?>
 
