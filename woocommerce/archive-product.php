@@ -25,12 +25,6 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-
-		<?php endif; ?>
-
 		<div class="banner-image">
 			<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'mobile' ); ?>
 			<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'tablet' ); ?>
@@ -55,6 +49,12 @@ get_header( 'shop' ); ?>
 				<img srcset="<?php echo $desktop[0]; ?>">
 			</picture>
 		</div>
+
+		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+
+			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+
+		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 
