@@ -19,7 +19,7 @@ get_header(); ?>
 	});
 </script>
 
-	<div id="primary" class="content-area">
+	<div class="content-container">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
