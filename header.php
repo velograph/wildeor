@@ -22,7 +22,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'Wildeor' ); ?></a>
 
 	<header id="masthead" class="header" role="banner">
-		
+
 		<div class="utility-header">
 			<a href="/my-account">My Account</a>
 			<a href="/cart">Cart</a>
@@ -53,4 +53,4 @@
 
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="content-container">

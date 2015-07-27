@@ -13,59 +13,55 @@
 
 get_header(); ?>
 
-	<div class="content-container">
+<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+		<article class="blog-article">
 
-				<article class="blog-article">
+			<div class="article-leading">
 
-					<div class="article-leading">
+				<a href="<?php the_permalink(); ?>">
 
-						<a href="<?php the_permalink(); ?>">
+					<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile' ); ?>
+					<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet' ); ?>
+					<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop' ); ?>
+					<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina' ); ?>
 
-							<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile' ); ?>
-							<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet' ); ?>
-							<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop' ); ?>
-							<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina' ); ?>
+					<picture>
+						<!--[if IE 9]><video style="display: none;"><![endif]-->
+						<source
+							srcset="<?php echo $mobile[0]; ?>"
+							media="(max-width: 500px)" />
+						<source
+							srcset="<?php echo $tablet[0]; ?>"
+							media="(max-width: 860px)" />
+						<source
+							srcset="<?php echo $desktop[0]; ?>"
+							media="(max-width: 1180px)" />
+						<source
+							srcset="<?php echo $retina[0]; ?>"
+							media="(min-width: 1181px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="<?php echo $desktop[0]; ?>">
+					</picture>
 
-							<picture>
-								<!--[if IE 9]><video style="display: none;"><![endif]-->
-								<source
-									srcset="<?php echo $mobile[0]; ?>"
-									media="(max-width: 500px)" />
-								<source
-									srcset="<?php echo $tablet[0]; ?>"
-									media="(max-width: 860px)" />
-								<source
-									srcset="<?php echo $desktop[0]; ?>"
-									media="(max-width: 1180px)" />
-								<source
-									srcset="<?php echo $retina[0]; ?>"
-									media="(min-width: 1181px)" />
-								<!--[if IE 9]></video><![endif]-->
-								<img srcset="<?php echo $desktop[0]; ?>">
-							</picture>
+					<h1><?php the_title(); ?></h1>
 
-							<h1><?php the_title(); ?></h1>
+				</a>
 
-						</a>
+			</div>
 
-					</div>
+		</article>
 
-				</article>
+	<?php endwhile; ?>
 
-			<?php endwhile; ?>
+	<?php basis_paging_nav(); ?>
 
-			<?php basis_paging_nav(); ?>
+<?php else : ?>
 
-		<?php else : ?>
+	<?php get_template_part( 'content', 'none' ); ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
-	</div><!-- #primary -->
+<?php endif; ?>
 
 <?php get_footer(); ?>
