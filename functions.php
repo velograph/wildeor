@@ -146,3 +146,10 @@ add_filter( 'body_class', 'add_slug_body_class' );
 
 // Remove Woo styling
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+// Remove Woo Reviews on product pages.
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+function wcs_woo_remove_reviews_tab($tabs) {
+ unset($tabs['reviews']);
+ return $tabs;
+}
