@@ -23,6 +23,15 @@
 @import "header";
 @import "footer";
 
+body {
+	.skip-link {
+		position: absolute;
+		text-indent: -9999px;
+	}
+	.content-container {
+		@include outer-container;
+	}
+}
 
 ul.social-media {
 	li {
@@ -33,17 +42,8 @@ ul.social-media {
 	}
 }
 
-.home-page-slider {
-	@include outer-container;
-}
-
 .shop-portal-row {
-	@include outer-container;
 	.shop-portal {
 		@include span-columns(4);
 	}
-}
-
-.page-lead-in {
-	@include outer-container;
 }

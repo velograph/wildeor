@@ -10,7 +10,7 @@
 
 	</div><!-- #content -->
 
-	<footer class="footer" role="contentinfo">
+	<footer class="footer-top">
 
 		<!-- Begin Partner Logos -->
 
@@ -42,12 +42,14 @@
 
 		<!-- End Partner Logos -->
 
-		<!-- Begin Footer -->
+	</footer>
+
+	<footer class="footer-bottom">
 
 		<div class="footer-row">
 
 			<div class="footer-section">
-				<img src="<?php the_field('pinecone_logo'); ?>" />
+				<img src="<?php the_field('text_logo_dark', 27); ?>" />
 			</div>
 
 			<div class="footer-section">
@@ -65,7 +67,9 @@
 		<div class="footer-row site-info">
 			&copy; <?php the_time('Y'); ?>
 		</div><!-- .site-info -->
+
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

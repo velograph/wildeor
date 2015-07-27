@@ -1,3 +1,8 @@
 .header {
 	@include outer-container;
+	.social-media {
+		svg {
+			fill: $blue;
+		}
+	}
 }

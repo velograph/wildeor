@@ -1,12 +1,28 @@
-.footer {
-	@include outer-container;
+.footer-top {
+	background: $slate;
+	.partner-logos {
+		@include outer-container;
+	}
+}
+
+.footer-bottom {
+	background: $blue;
+	color: $white;
+	a {
+		color: $white;
+	}
 	.footer-row {
 		@include row();
 		.footer-section {
 			@include span-columns(4);
+			.social-media {
+				svg {
+					fill: $slate;
+				}
+			}
 		}
-		.site-info {
-
-		}
+	}
+	.site-info {
+		color: $custard;
 	}
 }
