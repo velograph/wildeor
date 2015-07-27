@@ -12,7 +12,7 @@
 		color: $white;
 	}
 	.footer-row {
-		@include row();
+		@include outer-container;
 		.footer-section {
 			@include span-columns(4);
 			.social-media {
