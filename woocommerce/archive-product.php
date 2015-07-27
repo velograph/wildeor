@@ -31,6 +31,31 @@ get_header( 'shop' ); ?>
 
 		<?php endif; ?>
 
+		<div class="banner-image">
+			<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'mobile' ); ?>
+			<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'tablet' ); ?>
+			<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'desktop' ); ?>
+			<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'retina' ); ?>
+
+			<picture>
+				<!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source
+					srcset="<?php echo $mobile[0]; ?>"
+					media="(max-width: 500px)" />
+				<source
+					srcset="<?php echo $tablet[0]; ?>"
+					media="(max-width: 860px)" />
+				<source
+					srcset="<?php echo $desktop[0]; ?>"
+					media="(max-width: 1180px)" />
+				<source
+					srcset="<?php echo $retina[0]; ?>"
+					media="(min-width: 1181px)" />
+				<!--[if IE 9]></video><![endif]-->
+				<img srcset="<?php echo $desktop[0]; ?>">
+			</picture>
+		</div>
+
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 
 		<?php if ( have_posts() ) : ?>
