@@ -143,3 +143,6 @@ $classes[] = $post->post_type . '-' . $post->post_name;
 return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
+
+// Remove Woo styling
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
