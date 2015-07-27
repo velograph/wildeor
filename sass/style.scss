@@ -48,3 +48,13 @@ ul.social-media {
 		@include span-columns(4);
 	}
 }
+
+.single {
+	.blog-article {
+		@include row();
+		.entry-content {
+			@include span-columns(8);
+			@include shift(2);
+		}
+	}
+}
