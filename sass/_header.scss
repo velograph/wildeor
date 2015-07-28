@@ -1,9 +1,107 @@
-.header {
+//Hide the desktop header on small screens
+.desktop-header {
+	display: none;
+}
+
+// These items are treated the same on all browser widths
+.main-navigation {
+	li {
+		a {
+			color: $green;
+		}
+	}
+}
+
+.utility-header {
+	a {
+		color: $light_gray;
+	}
+}
+
+.cart-link {
+	padding-top: $five;
+	svg {
+		width: $twenty;
+		fill: $light_gray;
+	}
+	.cart-count {
+		vertical-align: top;
+	}
+}
+.social-media {
+	svg {
+		fill: $blue;
+	}
+}
+
+// End of similar styling
+
+.mobile-header {
+	@include outer-container;
+	margin-top: $twentyfive;
+	.site-branding {
+		text-align: center;
+	}
+	.menu-hook-container {
+		text-align: center;
+	}
+	.slide-out {
+		display: none;
+	}
+	.mobile-navigation {
+		@include row();
+		padding: $fifteen 0;
+		.main-navigation {
+			@include span-columns(4);
+			@include shift(2);
+			li {
+				margin-bottom: $five;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.utility-header {
+			@include span-columns(4);
+			font-size: 12px;
+			text-align: right;
+			.account-link,
+			.cart-link {
+				display: block;
+			}
+			.account-link {
+				margin-bottom: $five;
+			}
+		}
+	}
+	.search-form {
+		@include row();
+		label {
+			@include span-columns(10);
+			@include shift(1);
+			margin-bottom: 0;
+		}
+		input {
+			margin-bottom: $fifteen;
+		}
+	}
+	.social-media {
+		@include row();
+		margin-bottom: $fifteen;
+		text-align: center;
+		li {
+			margin: 0 $five;
+		}
+	}
 }
 
 @include media( $large-screen ) {
-	.header {
+	.mobile-header {
+		display: none;
+	}
+	.desktop-header {
 		@include outer-container;
+		display: block;
 		margin-top: $fifteen;
 		.utility-header {
 			@include row();
@@ -25,14 +123,6 @@
 			}
 			.cart-link {
 				@include span-columns(1);
-				padding-top: $five;
-				svg {
-					width: $twenty;
-					fill: $light_gray;
-				}
-				.cart-count {
-					vertical-align: top;
-				}
 			}
 			.search-form {
 				@include span-columns(2);
@@ -55,6 +145,7 @@
 			background: $white;
 			padding: $fifteen 0;
 			margin-bottom: $twenty;
+			z-index: 1;
 			.site-branding {
 				@include span-columns(4);
 				img {
@@ -72,9 +163,6 @@
 						@include span-columns(4);
 						display: inline-block;
 						text-align: center;
-						a {
-							color: $green;
-						}
 					}
 				}
 			}
@@ -84,9 +172,6 @@
 				text-align: right;
 				li {
 					padding-left: $ten;
-				}
-				svg {
-					fill: $blue;
 				}
 			}
 		}
