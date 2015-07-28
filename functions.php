@@ -90,6 +90,8 @@ function wildeor_scripts() {
 
 	wp_enqueue_script( 'wildeor-site-scripts', get_template_directory_uri() . '/js/site-scripts.js', array(), '20130115', true );
 
+	wp_enqueue_script( 'wildeor-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20130115', true );
+
 	wp_enqueue_script( 'wildeor-slick', get_template_directory_uri() . '/js/slick.min.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
