@@ -86,7 +86,7 @@ get_header(); ?>
 
 <?php if( have_rows('portal_content') ) : ?>
 
-	<div class="shop-portal-row">
+	<div class="portal-row">
 
     <?php while ( have_rows('portal_content') ) : ?>
 
