@@ -1,0 +1,9 @@
+.product {
+	.product-section {
+		@include row();
+		.product-images,
+		.summary {
+			@include span-columns(6);
+		}
+	}
+}
