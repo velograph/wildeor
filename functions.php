@@ -155,3 +155,21 @@ function wcs_woo_remove_reviews_tab($tabs) {
  unset($tabs['reviews']);
  return $tabs;
 }
+
+// Wildeor Logo on login
+function custom_login_logo() {
+	echo '<style type="text/css">
+	h1 a { background-image: url('.get_bloginfo('template_directory').'/images/wildeor_pinecone_title.svg) !important; }
+	</style>';
+}
+add_action('login_head', 'custom_login_logo');
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Wildeor';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
