@@ -155,3 +155,32 @@ function wcs_woo_remove_reviews_tab($tabs) {
  unset($tabs['reviews']);
  return $tabs;
 }
+
+// Wildeor Logo on login
+function custom_login_logo() {
+	echo '<style type="text/css">
+	h1 a { background-image: url('.get_bloginfo('template_directory').'/images/wildeor_pinecone_title.svg) !important; }
+	</style>';
+}
+add_action('login_head', 'custom_login_logo');
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Wildeor';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+// Add image sizes
+add_image_size( 'home-portal-mobile', '480', '218', 'true' );
+add_image_size( 'home-portal-tablet', '768', '450', 'true' );
+add_image_size( 'home-portal-desktop', '1280', '750', 'true' );
+add_image_size( 'home-portal-retina', '2560', '1500', 'true' );
+
+add_image_size( 'portal-mobile', '480', '349', 'true' );
+add_image_size( 'portal-tablet', '768', '558', 'true' );
+add_image_size( 'portal-desktop', '1280', '930', 'true' );
+add_image_size( 'portal-retina', '2560', '1860', 'true' );

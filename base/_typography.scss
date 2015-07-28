@@ -20,31 +20,50 @@ h6 {
 }
 
 h1 {
-  font-size: $h1-font-size;
+    font: {
+        family: $futura;
+        size: $h1-font-size;
+        weight: 900;
+    }
+    text-transform: uppercase;
 }
 
 h2 {
-  font-size: $h2-font-size;
+    font: {
+        size: $h2-font-size;
+    }
 }
 
 h3 {
-  font-size: $h3-font-size;
+    font: {
+        size: $h3-font-size;
+    }
 }
 
 h4 {
-  font-size: $h4-font-size;
+    font: {
+        family: $futura;
+        size: $h4-font-size;
+        weight: 900;
+    }
 }
 
 h5 {
-  font-size: $h5-font-size;
+    font: {
+        size: $h5-font-size;
+    }
 }
 
 h6 {
-  font-size: $h6-font-size;
+    font: {
+        size: $h6-font-size;
+    }
 }
 
 p {
-  margin: 0 0 ($base-spacing / 2);
+    font-weight: 300;
+    line-height: ($base-spacing * 1.25);
+    margin: 0 0 ($base-spacing);
 }
 
 a {

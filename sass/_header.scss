@@ -38,7 +38,7 @@
 
 .mobile-header {
 	@include outer-container;
-	margin-top: $twentyfive;
+	margin: $twentyfive 0;
 	.site-branding {
 		text-align: center;
 	}
