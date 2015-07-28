@@ -117,10 +117,61 @@ ul.social-media {
 
 // Typical row of portals
 .portal-row {
-	.shop-portal {
+	@include row();
+	margin-bottom: $fifty;
+	.portal {
 		padding: $column_spacing;
+		position: relative;
 		@include media( $large-screen ) {
 			@include span-columns(4);
+			padding: 0;
+		}
+		.portal-image {
+			position: relative;
+		}
+	}
+	.shop-portal {
+		text-align: center;
+		a {
+			color: $seventy_percent;
+		}
+		.portal-link {
+			bottom: $fifteen;
+			@include media( $large-screen ) {
+				bottom: $five;
+			}
+			left: 50%;
+			position: absolute;
+			@include transform( translateX(-50%) );
+			white-space: nowrap;
+			a {
+				color: $seventy_percent;
+				font: {
+					family: $futura;
+					size: $h4-font-size;
+					weight: 900;
+				}
+				text-transform: uppercase;
+			}
+		}
+		&:hover {
+			a {
+				color: $white;
+			}
+		}
+	}
+}
+
+.page-lead-in {
+	@include row();
+	.pinecone-logo {
+		@include span-columns(3);
+		text-align: center;
+	}
+	.page-lead-in-content {
+		@include span-columns(8);
+		h1 {
+			color: $green;
 		}
 	}
 }

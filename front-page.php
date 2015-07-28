@@ -38,10 +38,10 @@ get_header(); ?>
 
 				<div class="slide">
 
-					<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile'); ?>
-					<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet'); ?>
-					<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop'); ?>
-					<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina'); ?>
+					<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-mobile'); ?>
+					<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-tablet'); ?>
+					<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-desktop'); ?>
+					<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-retina'); ?>
 
 					<?php if( get_sub_field('image') ) : ?>
 						<a href="<?php the_sub_field('page_link'); ?>">
@@ -94,36 +94,40 @@ get_header(); ?>
 
         <?php if( get_row_layout() == 'portal' ) : ?>
 
-			<div class="shop-portal">
+			<div class="portal shop-portal">
 
-				<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'mobile'); ?>
-				<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'tablet'); ?>
-				<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'desktop'); ?>
-				<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'retina'); ?>
+				<?php $home_portal_mobile = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-mobile'); ?>
+				<?php $home_portal_tablet = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-tablet'); ?>
+				<?php $home_portal_desktop = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-desktop'); ?>
+				<?php $home_portal_retina = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-retina'); ?>
 
 				<?php if( get_sub_field('image') ) : ?>
-					<picture class="home-featured-image">
-						<!--[if IE 9]><video style="display: none"><![endif]-->
-						<source
-							srcset="<?php echo $mobile[0]; ?>"
-							media="(max-width: 500px)" />
-						<source
-							srcset="<?php echo $tablet[0]; ?>"
-							media="(max-width: 860px)" />
-						<source
-							srcset="<?php echo $desktop[0]; ?>"
-							media="(max-width: 1180px)" />
-						<source
-							srcset="<?php echo $retina[0]; ?>"
-							media="(min-width: 1181px)" />
-						<!--[if IE 9]></video><![endif]-->
-						<img srcset="<?php echo $desktop[0]; ?>">
-					</picture>
+					<a href="<?php the_sub_field('page_link'); ?>">
+						<picture class="portal-image">
+							<!--[if IE 9]><video style="display: none"><![endif]-->
+							<source
+								srcset="<?php echo $home_portal_mobile[0]; ?>"
+								media="(max-width: 500px)" />
+							<source
+								srcset="<?php echo $home_portal_tablet[0]; ?>"
+								media="(max-width: 860px)" />
+							<source
+								srcset="<?php echo $home_portal_desktop[0]; ?>"
+								media="(max-width: 1180px)" />
+							<source
+								srcset="<?php echo $home_portal_retina[0]; ?>"
+								media="(min-width: 1181px)" />
+							<!--[if IE 9]></video><![endif]-->
+							<img srcset="<?php echo $home_portal_desktop[0]; ?>">
+						</picture>
+					</a>
 				<?php endif; ?>
 
-				<a href="<?php the_sub_field('page_link'); ?>">
-					<?php the_sub_field('title'); ?>
-				</a>
+				<div class="portal-link">
+					<a href="<?php the_sub_field('page_link'); ?>">
+						<?php the_sub_field('title'); ?>
+					</a>
+				</div>
 
 			</div>
 
