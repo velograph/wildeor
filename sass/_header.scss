@@ -52,7 +52,9 @@
 		}
 		.main-navigation {
 			@include row();
-			margin: $fifty 0 $twenty;
+			background: $white;
+			padding: $fifteen 0;
+			margin-bottom: $twenty;
 			.site-branding {
 				@include span-columns(4);
 				img {
