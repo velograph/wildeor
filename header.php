@@ -24,8 +24,8 @@
 	<header id="masthead" class="header" role="banner">
 
 		<div class="utility-header">
-			<a href="/my-account">My Account</a>
-			<a href="/cart">Cart</a>
+			<span class="account-link"><a href="/my-account">My Account</a></span>
+			<span class="cart-link"><a href="/cart">Cart</a></span>
 			<form role="search" method="get" class="search-form" action="<?php echo site_url(); ?>">
 				<label>
 					<span class="screen-reader-text">Search for:</span>
@@ -35,19 +35,23 @@
 			</form>
 		</div>
 
-		<div class="site-branding">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src="<?php the_field('header_logo', 27); ?>" />
-			</a>
-		</div><!-- .site-branding -->
+		<div class="main-navigation">
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
+			<div class="site-branding">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<img src="<?php the_field('header_logo', 27); ?>" />
+				</a>
+			</div><!-- .site-branding -->
 
-		<div class="social-media-bar">
+			<nav id="site-navigation" class="navigation" role="navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</nav><!-- #site-navigation -->
 
-			<?php echo get_template_part('partials/social', 'media'); ?>
+			<div class="social-media-bar">
+
+				<?php echo get_template_part('partials/social', 'media'); ?>
+
+			</div>
 
 		</div>
 

@@ -1,8 +1,39 @@
 .header {
-	@include outer-container;
-	.social-media {
-		svg {
-			fill: $blue;
+}
+
+@include media( $large-screen ) {
+	.header {
+		@include outer-container;
+		.utility-header {
+			.account-link {
+				@include shift(8);
+				@include span-columns(1);
+			}
+			.cart-link {
+				@include span-columns(1);
+			}
+			.search-form {
+				@include span-columns(2);
+			}
+		}
+		.main-navigation {
+			.site-branding {
+				@include span-columns(6);
+			}
+			.navigation {
+				@include span-columns(4);
+				ul {
+					li {
+						display: inline-block;
+					}
+				}
+			}
+			.social-media {
+				@include span-columns(2);
+				svg {
+					fill: $blue;
+				}
+			}
 		}
 	}
 }
