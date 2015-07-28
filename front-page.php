@@ -15,6 +15,10 @@ get_header(); ?>
 <script>
 	jQuery(document).ready(function(){
 	  jQuery('.home-page-slider').slick({
+		  arrows: false,
+		  dots: true,
+		  mobileFirst: true,
+		  lazyLoad: 'ondemand',
 	  });
 	});
 </script>
