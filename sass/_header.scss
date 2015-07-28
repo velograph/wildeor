@@ -100,9 +100,14 @@
 		display: none;
 	}
 	.desktop-header {
-		@include outer-container;
+		background: $white;
 		display: block;
-		margin-top: $fifteen;
+		padding-top: $fifteen;
+		min-width: 100%;
+		z-index: 1;
+		.inner-container {
+			@include outer-container;
+		}
 		.utility-header {
 			@include row();
 			color: $light_gray;
@@ -145,7 +150,7 @@
 			background: $white;
 			padding: $fifteen 0;
 			margin-bottom: $twenty;
-			z-index: 1;
+			index: 1;
 			.site-branding {
 				@include span-columns(4);
 				img {

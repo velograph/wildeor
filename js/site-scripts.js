@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
 	if (jQuery(window).width() > 860) {
 
 		// Desktop sticky header
-		jQuery(".main-navigation").sticky({
+		jQuery(".desktop-header").sticky({
 			topSpacing: 0
 		});
 
