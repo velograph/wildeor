@@ -173,3 +173,14 @@ function my_login_logo_url_title() {
     return 'Wildeor';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+// Add image sizes
+add_image_size( 'home-portal-mobile', '480', '218', 'true' );
+add_image_size( 'home-portal-tablet', '768', '450', 'true' );
+add_image_size( 'home-portal-desktop', '1280', '750', 'true' );
+add_image_size( 'home-portal-retina', '2560', '1500', 'true' );
+
+add_image_size( 'portal-mobile', '480', '349', 'true' );
+add_image_size( 'portal-tablet', '768', '558', 'true' );
+add_image_size( 'portal-desktop', '1280', '930', 'true' );
+add_image_size( 'portal-retina', '2560', '1860', 'true' );
