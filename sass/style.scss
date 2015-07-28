@@ -59,43 +59,47 @@ body {
 	}
 }
 
-.slick-track {
-	.slick-slide {
-		position: relative;
-		.slide-caption {
-			bottom: $twentyfive;
-			padding-right: $twentyfive;
-			position: absolute;
-			@include media( $large-screen ) {
-				@include span-columns(6);
-				@include shift(6);
+// Slider styling
+.slick-slider {
+	margin-bottom: $column_spacing;
+	.slick-track {
+		.slick-slide {
+			position: relative;
+			.slide-caption {
+				bottom: $twentyfive;
+				padding-right: $twentyfive;
+				position: absolute;
+				@include media( $large-screen ) {
+					@include span-columns(6);
+					@include shift(6);
+				}
 			}
 		}
 	}
-}
-.slick-dots {
-	bottom: $ten;
-	margin-left: $ten;
-	position: absolute;
-	li {
-		display: inline-block;
-		margin-right: $five;
-		button {
-			background: rgba(255,255,255,.2);
-			border-radius: $fifty;
-			height: $ten;
-			padding: 0;
-			text-indent: -9999px;
-			width: $ten;
-		}
-		&.slick-active {
+	.slick-dots {
+		bottom: $ten;
+		margin-left: $ten;
+		position: absolute;
+		li {
+			display: inline-block;
+			margin-right: $five;
 			button {
-				background: rgba(255,255,255,.5);
+				background: rgba(255,255,255,.2);
+				border-radius: $fifty;
+				height: $ten;
+				padding: 0;
+				text-indent: -9999px;
+				width: $ten;
 			}
-		}
-		&:hover {
-			button {
-				background: rgba(255,255,255,.5);
+			&.slick-active {
+				button {
+					background: rgba(255,255,255,.5);
+				}
+			}
+			&:hover {
+				button {
+					background: rgba(255,255,255,.5);
+				}
 			}
 		}
 	}
