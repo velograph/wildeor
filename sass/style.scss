@@ -52,6 +52,11 @@ body {
 	.content-container {
 		@include outer-container;
 	}
+	.button {
+		background: $blue;
+		border-radius: 0;
+		text-transform: none;
+	}
 }
 
 ul.social-media {
