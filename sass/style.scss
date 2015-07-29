@@ -61,7 +61,7 @@ body {
 
 // Slider styling
 .slick-slider {
-	margin-bottom: $column_spacing;
+	margin-bottom: ($column_spacing * 3);
 	.slick-track {
 		.slick-slide {
 			position: relative;
@@ -171,6 +171,7 @@ ul.social-media {
 		padding: 0 $column_spacing;
 		h1 {
 			color: $green;
+			text-align: center;
 		}
 	}
 	@include media( $large-screen ) {
