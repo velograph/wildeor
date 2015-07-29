@@ -184,3 +184,8 @@ add_image_size( 'portal-mobile', '480', '349', 'true' );
 add_image_size( 'portal-tablet', '768', '558', 'true' );
 add_image_size( 'portal-desktop', '1280', '930', 'true' );
 add_image_size( 'portal-retina', '2560', '1860', 'true' );
+
+add_image_size( 'slider-mobile', '480', '225', 'true' );
+add_image_size( 'slider-tablet', '768', '360', 'true' );
+add_image_size( 'slider-desktop', '1280', '600', 'true' );
+add_image_size( 'slider-retina', '2560', '1200', 'true' );

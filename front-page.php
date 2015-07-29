@@ -38,29 +38,29 @@ get_header(); ?>
 
 				<div class="slide">
 
-					<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-mobile'); ?>
-					<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-tablet'); ?>
-					<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-desktop'); ?>
-					<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-retina'); ?>
+					<?php $slider_mobile = wp_get_attachment_image_src(get_sub_field('image'), 'slider-mobile'); ?>
+					<?php $slider_tablet = wp_get_attachment_image_src(get_sub_field('image'), 'slider-tablet'); ?>
+					<?php $slider_desktop = wp_get_attachment_image_src(get_sub_field('image'), 'slider-desktop'); ?>
+					<?php $slider_retina = wp_get_attachment_image_src(get_sub_field('image'), 'slider-retina'); ?>
 
 					<?php if( get_sub_field('image') ) : ?>
 						<a href="<?php the_sub_field('page_link'); ?>">
-							<picture class="home-featured-image">
+							<picture>
 								<!--[if IE 9]><video style="display: none"><![endif]-->
 								<source
-									srcset="<?php echo $mobile[0]; ?>"
+									srcset="<?php echo $slider_mobile[0]; ?>"
 									media="(max-width: 500px)" />
 								<source
-									srcset="<?php echo $tablet[0]; ?>"
+									srcset="<?php echo $slider_tablet[0]; ?>"
 									media="(max-width: 860px)" />
 								<source
-									srcset="<?php echo $desktop[0]; ?>"
+									srcset="<?php echo $slider_desktop[0]; ?>"
 									media="(max-width: 1180px)" />
 								<source
-									srcset="<?php echo $retina[0]; ?>"
+									srcset="<?php echo $slider_retina[0]; ?>"
 									media="(min-width: 1181px)" />
 								<!--[if IE 9]></video><![endif]-->
-								<img srcset="<?php echo $desktop[0]; ?>">
+								<img srcset="<?php echo $slider_desktop[0]; ?>">
 							</picture>
 						</a>
 					<?php endif; ?>
