@@ -189,3 +189,8 @@ add_image_size( 'slider-mobile', '480', '225', 'true' );
 add_image_size( 'slider-tablet', '768', '360', 'true' );
 add_image_size( 'slider-desktop', '1280', '600', 'true' );
 add_image_size( 'slider-retina', '2560', '1200', 'true' );
+
+add_image_size( 'shop-banner-mobile', '480', '150', 'true' );
+add_image_size( 'shop-banner-tablet', '768', '240', 'true' );
+add_image_size( 'shop-banner-desktop', '1280', '600', 'true' );
+add_image_size( 'shop-banner-retina', '2560', '800', 'true' );

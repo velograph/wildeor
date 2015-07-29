@@ -26,27 +26,27 @@ get_header( 'shop' ); ?>
 	?>
 
 		<div class="banner-image">
-			<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'mobile' ); ?>
-			<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'tablet' ); ?>
-			<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'desktop' ); ?>
-			<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'retina' ); ?>
+			<?php $shop_banner_mobile = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'shop-banner-mobile' ); ?>
+			<?php $shop_banner_tablet = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'shop-banner-tablet' ); ?>
+			<?php $shop_banner_desktop = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'shop-banner-desktop' ); ?>
+			<?php $shop_banner_retina = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'shop-banner-retina' ); ?>
 
 			<picture>
 				<!--[if IE 9]><video style="display: none;"><![endif]-->
 				<source
-					srcset="<?php echo $mobile[0]; ?>"
+					srcset="<?php echo $shop_banner_mobile[0]; ?>"
 					media="(max-width: 500px)" />
 				<source
-					srcset="<?php echo $tablet[0]; ?>"
+					srcset="<?php echo $shop_banner_tablet[0]; ?>"
 					media="(max-width: 860px)" />
 				<source
-					srcset="<?php echo $desktop[0]; ?>"
+					srcset="<?php echo $shop_banner_desktop[0]; ?>"
 					media="(max-width: 1180px)" />
 				<source
-					srcset="<?php echo $retina[0]; ?>"
+					srcset="<?php echo $shop_banner_retina[0]; ?>"
 					media="(min-width: 1181px)" />
 				<!--[if IE 9]></video><![endif]-->
-				<img srcset="<?php echo $desktop[0]; ?>">
+				<img srcset="<?php echo $shop_banner_desktop[0]; ?>">
 			</picture>
 		</div>
 
