@@ -1,28 +1,59 @@
+.footer-row {
+	@include row();
+}
+
 .footer-top {
 	background: $slate;
+	padding: $twentyfive 0;
 	.partner-logos {
 		@include outer-container;
+		text-align: center;
+		.partner {
+			img, svg {
+				max-width: 100px;
+			}
+		}
+		@include media( $large-screen ) {
+			.partner {
+				@include span-columns(3);
+				&:first-of-type {
+					@include shift(2);
+				}
+			}
+		}
 	}
 }
 
 .footer-bottom {
 	background: $blue;
 	color: $white;
+	padding: $twenty 0;
 	a {
 		color: $white;
 	}
 	.footer-row {
 		@include outer-container;
-		.footer-section {
-			@include span-columns(4);
-			.social-media {
-				svg {
-					fill: $slate;
-				}
+		text-align: center;
+		@include media( $large-screen ) {
+			.footer-section {
+				@include span-columns(4);
+			}
+			.footer-logo {
+				text-align: left;
+			}
+			.mailing-signup {
+				text-align: center;
 			}
 		}
-	}
-	.site-info {
-		color: $custard;
+		.site-info {
+			color: $custard;
+			font-size: 12px;
+			@include media( $large-screen ) {
+				text-align: right;
+			}
+			a {
+				color: $custard;
+			}
+		}
 	}
 }

@@ -10,7 +10,7 @@
 
 	</div><!-- #content -->
 
-	<footer class="footer-top">
+	<footer class="footer-top footer-row">
 
 		<!-- Begin Partner Logos -->
 
@@ -44,29 +44,33 @@
 
 	</footer>
 
-	<footer class="footer-bottom">
+	<footer class="footer-bottom footer-row">
 
 		<div class="footer-row">
 
-			<div class="footer-section">
+			<div class="footer-section footer-logo">
 				<img src="<?php the_field('text_logo_dark', 27); ?>" />
 			</div>
 
-			<div class="footer-section">
+			<div class="footer-section mailing-signup">
 				Mailing List
 			</div>
 
-			<div class="footer-section">
-				<?php echo get_template_part('partials/social', 'media'); ?>
+			<div class="footer-section site-info">
+				<?php // echo get_template_part('partials/social', 'media'); ?>
+				&copy; <?php the_time('Y'); ?>
+				<div class="built-by">
+					Built by <a href="http://velograph.net" target="_blank">Velograph</a>
+				</div>
 			</div>
 
 		</div>
 
 		<!-- End Footer -->
 
-		<div class="footer-row site-info">
+		<!-- <div class="footer-row site-info">
 			&copy; <?php the_time('Y'); ?>
-		</div><!-- .site-info -->
+		</div> -->
 
 	</footer><!-- #colophon -->
 
