@@ -165,13 +165,21 @@ ul.social-media {
 .page-lead-in {
 	@include row();
 	.pinecone-logo {
-		@include span-columns(3);
 		text-align: center;
 	}
 	.page-lead-in-content {
-		@include span-columns(8);
+		padding: 0 $column_spacing;
 		h1 {
 			color: $green;
+		}
+	}
+	@include media( $large-screen ) {
+		.pinecone-logo {
+			@include span-columns(3);
+		}
+		.page-lead-in-content {
+			@include span-columns(8);
+			padding: 0;
 		}
 	}
 }
