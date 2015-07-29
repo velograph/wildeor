@@ -99,52 +99,55 @@
 	.mobile-header {
 		display: none;
 	}
+	.inner-container {
+		@include outer-container;
+	}
+	.utility-header {
+		@include row();
+		color: $light_gray;
+		margin-top: $fifteen;
+		a {
+			color: $light_gray;
+			font: {
+				size: 12px;
+				weight: 300;
+			}
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.account-link {
+			@include shift(8);
+			@include span-columns(1);
+		}
+		.cart-link {
+			@include span-columns(1);
+		}
+		.search-form {
+			@include span-columns(2);
+			input[type="search"] {
+				background: {
+					image: url('../images/magnifying_glass.svg');
+					position: $five center;
+					repeat: no-repeat;
+					size: $twenty;
+				}
+				border-radius: 0;
+				color: $gray;
+				font: {
+					size: 12px;
+					weight: 300;
+				}
+				padding: $five $five $five $twentyfive;
+			}
+		}
+	}
 	.desktop-header {
 		background: $white;
 		display: block;
 		padding-top: $fifteen;
 		min-width: 100%;
 		z-index: 1;
-		.inner-container {
-			@include outer-container;
-		}
-		.utility-header {
-			@include row();
-			color: $light_gray;
-			font: {
-				size: 12px;
-				weight: 300;
-			}
-			a {
-				color: $light_gray;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-			.account-link {
-				@include shift(8);
-				@include span-columns(1);
-				padding-top: $five;
-			}
-			.cart-link {
-				@include span-columns(1);
-			}
-			.search-form {
-				@include span-columns(2);
-				input[type="search"] {
-					background: {
-						image: url('../images/magnifying_glass.svg');
-						position: $five center;
-						repeat: no-repeat;
-						size: $twenty;
-					}
-					border-radius: 0;
-					color: $gray;
-					font-weight: 300;
-					padding: $five $five $five $twentyfive;
-				}
-			}
-		}
 		.main-navigation {
 			@include row();
 			background: $white;
