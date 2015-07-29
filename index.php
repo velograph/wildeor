@@ -19,38 +19,43 @@ get_header(); ?>
 
 		<article class="blog-article">
 
-			<div class="article-leading">
+			<a href="<?php the_permalink(); ?>">
 
-				<a href="<?php the_permalink(); ?>">
+				<?php $slider_mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'slider-mobile' ); ?>
+				<?php $slider_tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'slider-tablet' ); ?>
+				<?php $slider_desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'slider-desktop' ); ?>
+				<?php $slider_retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'slider-retina' ); ?>
 
-					<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile' ); ?>
-					<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet' ); ?>
-					<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop' ); ?>
-					<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina' ); ?>
+				<picture class="blog-cover-image">
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source
+						srcset="<?php echo $slider_mobile[0]; ?>"
+						media="(max-width: 500px)" />
+					<source
+						srcset="<?php echo $slider_tablet[0]; ?>"
+						media="(max-width: 860px)" />
+					<source
+						srcset="<?php echo $slider_desktop[0]; ?>"
+						media="(max-width: 1180px)" />
+					<source
+						srcset="<?php echo $slider_retina[0]; ?>"
+						media="(min-width: 1181px)" />
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="<?php echo $slider_desktop[0]; ?>">
+				</picture>
+			</a>
 
-					<picture>
-						<!--[if IE 9]><video style="display: none;"><![endif]-->
-						<source
-							srcset="<?php echo $mobile[0]; ?>"
-							media="(max-width: 500px)" />
-						<source
-							srcset="<?php echo $tablet[0]; ?>"
-							media="(max-width: 860px)" />
-						<source
-							srcset="<?php echo $desktop[0]; ?>"
-							media="(max-width: 1180px)" />
-						<source
-							srcset="<?php echo $retina[0]; ?>"
-							media="(min-width: 1181px)" />
-						<!--[if IE 9]></video><![endif]-->
-						<img srcset="<?php echo $desktop[0]; ?>">
-					</picture>
+			<div class="meta-container">
 
-					<h1><?php the_title(); ?></h1>
-
-				</a>
+				<h1>
+					<a href="<?php the_permalink(); ?>">
+						<?php the_title(); ?>
+					</a>
+				</h1>
 
 			</div>
+
+			</a>
 
 		</article>
 

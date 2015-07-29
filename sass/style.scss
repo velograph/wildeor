@@ -185,12 +185,69 @@ ul.social-media {
 	}
 }
 
+.blog {
+	.blog-article {
+		margin-bottom: $column_spacing;
+		position: relative;
+		.meta-container {
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			@include transform( translate(-50%,-50%) );
+			a {
+				color: $seventy_percent;
+			}
+		}
+		&:hover {
+			a {
+				color: $white;
+			}
+		}
+		&:last-of-type {
+			margin-bottom: 100px;
+		}
+	}
+}
+
 .single {
 	.blog-article {
+		.article-leading {
+			@include row();
+			margin-bottom: $fifty;
+			position: relative;
+			.meta-container {
+				color: $white;
+				left: 50%;
+				position: absolute;
+				text-align: center;
+				top: 50%;
+				@include transform( translate(-50%,-50%) );
+			}
+		}
+		.entry-content-container {
+			@include row();
+			.entry-content {
+				@include span-columns(8);
+				@include shift(2);
+				.wp-caption-text {
+					color: $light_gray;
+					font: {
+						size: 12px;
+						style: italic;
+					}
+					text-align: center;
+				}
+			}
+		}
+	}
+	.post-navigation {
 		@include row();
-		.entry-content {
-			@include span-columns(8);
-			@include shift(2);
+		margin: $fifty 0;
+		.nav-previous {
+			float: left;
+		}
+		.nav-next {
+			float: right;
 		}
 	}
 }

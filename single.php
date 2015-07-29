@@ -13,32 +13,47 @@ get_header(); ?>
 
 		<div class="article-leading">
 
-			<?php $mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'mobile' ); ?>
-			<?php $tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'tablet' ); ?>
-			<?php $desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'desktop' ); ?>
-			<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'retina' ); ?>
+			<?php $slider_mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'slider-mobile' ); ?>
+			<?php $slider_tablet = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'slider-tablet' ); ?>
+			<?php $slider_desktop = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'slider-desktop' ); ?>
+			<?php $slider_retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'slider-retina' ); ?>
 
-			<picture>
+			<picture class="blog-cover-image">
 				<!--[if IE 9]><video style="display: none;"><![endif]-->
 				<source
-					srcset="<?php echo $mobile[0]; ?>"
+					srcset="<?php echo $slider_mobile[0]; ?>"
 					media="(max-width: 500px)" />
 				<source
-					srcset="<?php echo $tablet[0]; ?>"
+					srcset="<?php echo $slider_tablet[0]; ?>"
 					media="(max-width: 860px)" />
 				<source
-					srcset="<?php echo $desktop[0]; ?>"
+					srcset="<?php echo $slider_desktop[0]; ?>"
 					media="(max-width: 1180px)" />
 				<source
-					srcset="<?php echo $retina[0]; ?>"
+					srcset="<?php echo $slider_retina[0]; ?>"
 					media="(min-width: 1181px)" />
 				<!--[if IE 9]></video><![endif]-->
-				<img srcset="<?php echo $desktop[0]; ?>">
+				<img srcset="<?php echo $slider_desktop[0]; ?>">
 			</picture>
+
+			<div class="meta-container">
+
+				<h1>
+					<?php the_title(); ?>
+				</h1>
+				<div class="entry-meta">
+					<em>Posted <?php the_time('F j, Y'); ?></em>
+				</div>
+
+			</div>
 
 		</div>
 
-		<?php echo get_template_part('partials/entry', 'content'); ?>
+		<div class="entry-content-container">
+			<div class="entry-content">
+				<?php the_content(); ?>
+			</div>
+		</div>
 
 	</article>
 
