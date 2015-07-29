@@ -39,11 +39,12 @@
 
 .mobile-header {
 	@include outer-container;
-	margin: $twentyfive 0;
+	margin-top: $twentyfive;
 	.site-branding {
 		text-align: center;
 	}
 	.menu-hook-container {
+		margin: $twenty 0 $twentyfive;
 		text-align: center;
 	}
 	.slide-out {
@@ -78,8 +79,8 @@
 	.search-form {
 		@include row();
 		label {
-			@include span-columns(10);
-			@include shift(1);
+			@include span-columns(8);
+			@include shift(2);
 			margin-bottom: 0;
 		}
 		input {
