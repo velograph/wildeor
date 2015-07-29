@@ -31,6 +31,9 @@ body {
 	a, button, input[type="submit"] {
 		transition: all .2s ease-in-out;
 	}
+	a:hover {
+		cursor: pointer;
+	}
 	img {
 		height: auto;
 		max-width: 100%;
@@ -59,9 +62,13 @@ body {
 	}
 }
 
+// Used on all top banner images or sliders for consistent margin
+.banner-image {
+	margin-bottom: ($column_spacing * 3);
+}
+
 // Slider styling
 .slick-slider {
-	margin-bottom: ($column_spacing * 3);
 	.slick-track {
 		.slick-slide {
 			position: relative;
@@ -126,11 +133,24 @@ ul.social-media {
 			@include span-columns(4);
 			padding: 0;
 		}
+		.portal-link {
+			font: {
+				family: $futura;
+				size: $h3-font-size;
+				weight: 900;
+			}
+			text-transform: uppercase;
+		}
 		.portal-image {
 			position: relative;
 		}
 	}
 	.shop-portal {
+		a {
+			color: $green;
+		}
+	}
+	.home-portal {
 		text-align: center;
 		a {
 			color: $seventy_percent;
@@ -147,11 +167,8 @@ ul.social-media {
 			a {
 				color: $seventy_percent;
 				font: {
-					family: $futura;
 					size: $h4-font-size;
-					weight: 900;
 				}
-				text-transform: uppercase;
 			}
 		}
 		&:hover {

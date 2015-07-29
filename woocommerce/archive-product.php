@@ -50,12 +50,6 @@ get_header( 'shop' ); ?>
 			</picture>
 		</div>
 
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-
-		<?php endif; ?>
-
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 
 		<?php if ( have_posts() ) : ?>
@@ -74,11 +68,54 @@ get_header( 'shop' ); ?>
 
 				<?php woocommerce_product_subcategories(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php wc_get_template_part( 'content', 'product' ); ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php endwhile; // end of the loop. ?>
+						<?php if ($i == 0 || $i % 3 == 0) { ?>
+							<div class="portal-row">
+						<?php }; ?>
+
+						<div class="portal shop-portal">
+							<?php $portal_mobile = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium'); ?> <!-- portal-mobile -->
+							<?php $portal_tablet = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium'); ?> <!-- portal-tablet -->
+							<?php $portal_desktop = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium'); ?> <!-- portal-desktop -->
+							<?php $portal_retina = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium'); ?> <!-- portal-retina -->
+
+							<a href="<?php the_permalink(); ?>">
+								<picture class="portal-image">
+									<!--[if IE 9]><video style="display: none"><![endif]-->
+									<source
+										srcset="<?php echo $portal_mobile[0]; ?>"
+										media="(max-width: 500px)" />
+									<source
+										srcset="<?php echo $portal_tablet[0]; ?>"
+										media="(max-width: 860px)" />
+									<source
+										srcset="<?php echo $portal_desktop[0]; ?>"
+										media="(max-width: 1180px)" />
+									<source
+										srcset="<?php echo $portal_retina[0]; ?>"
+										media="(min-width: 1181px)" />
+									<!--[if IE 9]></video><![endif]-->
+									<img srcset="<?php echo $portal_desktop[0]; ?>">
+								</picture>
+							</a>
+
+							<div class="portal-link">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_title(); ?>
+								</a>
+							</div>
+						</div>
+
+						<?php
+						  $i++;
+						  if ($i % 3 == 0){echo "</div>";} ?>
+
+						<?php // wc_get_template_part( 'content', 'product' ); ?>
+
+					<?php endwhile; // end of the loop. ?>
+
 
 			<?php woocommerce_product_loop_end(); ?>
 

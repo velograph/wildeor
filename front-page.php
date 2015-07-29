@@ -29,7 +29,7 @@ get_header(); ?>
 
 	<?php if( have_rows('slider_guts') ) : ?>
 
-		<div class="home-page-slider">
+		<div class="home-page-slider banner-image">
 	    <?php while ( have_rows('slider_guts') ) : ?>
 
 	        <?php the_row(); ?>
@@ -82,7 +82,7 @@ get_header(); ?>
 
 <!-- End Flexible Content -->
 
-<!-- Begin Shop Portals -->
+<!-- Begin Home Portals -->
 
 <?php if( have_rows('portal_content') ) : ?>
 
@@ -94,7 +94,7 @@ get_header(); ?>
 
         <?php if( get_row_layout() == 'portal' ) : ?>
 
-			<div class="portal shop-portal">
+			<div class="portal home-portal">
 
 				<?php $home_portal_mobile = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-mobile'); ?>
 				<?php $home_portal_tablet = wp_get_attachment_image_src(get_sub_field('image'), 'home-portal-tablet'); ?>
@@ -139,7 +139,7 @@ get_header(); ?>
 
 <?php endif; ?>
 
-<!-- End Shop Portals -->
+<!-- End Home Portals -->
 
 <!-- Begin Page Lead In -->
 
