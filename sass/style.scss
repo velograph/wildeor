@@ -176,9 +176,6 @@ ul.social-media {
 			white-space: nowrap;
 			a {
 				color: $seventy_percent;
-				font: {
-					size: $h4-font-size;
-				}
 			}
 		}
 		&:hover {
@@ -199,6 +196,9 @@ ul.social-media {
 		h1 {
 			color: $green;
 			text-align: center;
+			@include media( $large-screen ) {
+				text-align: left;
+			}
 		}
 	}
 	@include media( $large-screen ) {
