@@ -26,6 +26,10 @@
 
 body {
 	color: $gray;
+	font: {
+		family: $futura;
+		weight: 300;
+	}
 	margin: 0;
 	padding: 0;
 	a, button, input[type="submit"] {
@@ -33,6 +37,12 @@ body {
 	}
 	a:hover {
 		cursor: pointer;
+	}
+	button {
+		font: {
+			family: $futura;
+			weight: 300;
+		}
 	}
 	img {
 		height: auto;

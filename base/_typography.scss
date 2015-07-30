@@ -28,9 +28,12 @@ h1 {
     text-transform: uppercase;
 }
 
+.price,
 h2 {
     font: {
+        family: $futura;
         size: $h2-font-size;
+        weight: 300;
     }
 }
 

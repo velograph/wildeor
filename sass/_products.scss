@@ -1,9 +1,85 @@
 .product {
 	.product-section {
 		@include row();
-		.product-images,
+		@include media( $large-screen ) {
+			.product-gallery-container,
+			.summary {
+				@include span-columns(6);
+			}
+		}
+		.product-gallery-container {
+			margin: 0 $column_spacing;
+			@include media( $large-screen ) {
+				margin: 0 0 ($column_spacing * 3) 0;
+			}
+		}
+		.product-thumbs {
+			margin: $ten 0 $twentyfive;
+			img {
+				height: 75px;
+				margin-right: $ten;
+				max-width: 75px;
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
 		.summary {
-			@include span-columns(6);
+			margin: 0 $column_spacing;
+			@include media( $large-screen ) {
+				margin: 0 $column_spacing ($column_spacing * 3);
+			}
+			h1 {
+				color: $green;
+			}
+			p.price {
+				margin-bottom: 0;
+			}
+			p:last-of-type {
+				margin-bottom: 0;
+			}
+			div[itemprop="description"] {
+				margin-bottom: $fifty;
+			}
+			.cart {
+				@include row();
+				.quantity {
+					@include span-columns(2);
+					input[type="number"] {
+						width: 50%;
+					}
+				}
+				.single_add_to_cart_button {
+				}
+			}
+		}
+	}
+	.related {
+		margin: 0 $column_spacing ($column_spacing * 3);
+		@include media( $large-screen ) {
+			margin: 0 0 ($column_spacing * 3);
+		}
+		.products {
+			@include row();
+			.product {
+				@include media( $large-screen ) {
+					@include span-columns(4);
+				}
+			}
+		}
+		a {
+			color: $green;
+			h3 {
+				font: {
+					family: $futura;
+					size: $h3-font-size;
+					weight: 900;
+				}
+				text-transform: uppercase;
+			}
+			.price {
+				display: none;
+			}
 		}
 	}
 }
