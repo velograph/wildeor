@@ -53,7 +53,7 @@
 			</div>
 
 			<div class="footer-section mailing-signup">
-				Mailing List
+				<?php echo do_shortcode('[epm_mailchimp]'); ?>
 			</div>
 
 			<div class="footer-section site-info">
