@@ -130,16 +130,6 @@
 			input[type="search"] {
 				background: {
 					image: url('../images/magnifying_glass.svg');
-					position: $five center;
-					repeat: no-repeat;
-					size: $twenty;
-				}
-				border-radius: 0;
-				color: $gray;
-				font: {
-					family: $futura;
-					size: 12px;
-					weight: 300;
 				}
 				padding: $five $five $five $twentyfive;
 			}

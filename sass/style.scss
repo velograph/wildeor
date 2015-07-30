@@ -52,6 +52,21 @@ body {
 		position: absolute;
 		text-indent: -99999px;
 	}
+	input[type="search"],
+	input[type="email"] {
+		background: {
+			position: $five center;
+			repeat: no-repeat;
+			size: $twenty;
+		}
+		border-radius: 0;
+		color: $gray;
+		font: {
+			family: $futura;
+			size: 12px;
+			weight: 300;
+		}
+	}
 	select {
 		background: $white;
 		border-color: #c4c4c4;

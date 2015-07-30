@@ -57,6 +57,7 @@
 			</div>
 
 			<div class="footer-section mailing-signup">
+				<div class="mailing-list-title">Want Updates?</div>
 				<?php echo do_shortcode('[epm_mailchimp]'); ?>
 			</div>
 
@@ -64,7 +65,7 @@
 
 				<span class="copyright">&copy; <?php the_time('Y'); ?></span>
 				<div class="built-by">
-					Built by <a href="http://velograph.net" target="_blank">Velograph</a>
+					Built by <a href="http://velograph.co" target="_blank">Velograph</a>
 				</div>
 
 			</div>

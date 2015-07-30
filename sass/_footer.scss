@@ -27,7 +27,7 @@
 .footer-bottom {
 	background: $blue;
 	color: $white;
-	padding: $twenty 0;
+	padding: $twentyfive $column_spacing;
 	a {
 		color: $white;
 	}
@@ -41,18 +41,72 @@
 			.footer-logo {
 				text-align: left;
 			}
-			.mailing-signup {
-				text-align: center;
+		}
+		.footer-logo {
+			margin-bottom: $ten;
+			@include media( $large-screen ) {
+				margin-bottom: 0;
+			}
+		}
+		.mailing-signup {
+			margin-bottom: $fifty;
+			@include media( $large-screen ) {
+				margin-bottom: 0;
+				padding-top: $five;
+			}
+			text-align: center;
+			.mailing-list-title {
+				margin-bottom: $ten;
+				@include media( $large-screen ) {
+					@include span-columns(5);
+					color: $yellow;
+					font: {
+						family: $futura;
+						weight: 900;
+					}
+					margin-bottom: 0;
+					padding-top: 3px;
+				}
+			}
+			.epm-sign-up-form {
+				margin: 0 auto;
+				position: relative;
+				width: 50%;
+				@include media( $large-screen ) {
+					@include span-columns(7);
+				}
+				label[for="epm-email"],
+				input[type="submit"] {
+					display: none;
+				}
+				input[type="email"] {
+					background: {
+						image: url('../images/envelope.svg');
+					}
+					padding: $five $five $five 35px;
+				}
+				.epm-success {
+					bottom: -55px;
+					left: -75px;
+					min-width: 300px;
+					position: absolute;
+					@include media( $large-screen ) {
+						bottom: -50px;
+						left: -125px;
+						min-width: 300px;
+					}
+				}
 			}
 		}
 		.site-info {
 			color: $custard;
 			font-size: 12px;
-			@include media( $large-screen ) {
-				text-align: right;
-			}
+			text-align: right;
 			a {
 				color: $custard;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 	}
