@@ -10,6 +10,8 @@
 
 	</div><!-- #content -->
 
+	<!-- Begin Footers -->
+
 	<footer class="footer-top footer-row">
 
 		<!-- Begin Partner Logos -->
@@ -46,6 +48,8 @@
 
 	<footer class="footer-bottom footer-row">
 
+		<!-- Begin Standard Footer -->
+
 		<div class="footer-row">
 
 			<div class="footer-section footer-logo">
@@ -57,22 +61,21 @@
 			</div>
 
 			<div class="footer-section site-info">
-				<?php // echo get_template_part('partials/social', 'media'); ?>
-				&copy; <?php the_time('Y'); ?>
+
+				<span class="copyright">&copy; <?php the_time('Y'); ?></span>
 				<div class="built-by">
 					Built by <a href="http://velograph.net" target="_blank">Velograph</a>
 				</div>
+
 			</div>
 
 		</div>
 
-		<!-- End Footer -->
+		<!-- End Standard Footer -->
 
-		<!-- <div class="footer-row site-info">
-			&copy; <?php the_time('Y'); ?>
-		</div> -->
+	</footer>
 
-	</footer><!-- #colophon -->
+	<!-- End Footers -->
 
 </div><!-- #page -->
 
